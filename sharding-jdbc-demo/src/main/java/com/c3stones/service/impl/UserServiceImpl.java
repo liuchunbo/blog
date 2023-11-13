@@ -39,4 +39,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 		return super.save(user);
 	}
 
+
+	public static void main(String[] args) {
+		int a = 200;
+		int e = 200;
+		Integer b = 200;
+		Integer f = 200;
+		Integer c = new Integer(200);
+
+		System.out.println(a == b);
+		System.out.println(a == c);
+		System.out.println(c == b);
+		System.out.println(b == f);
+		System.out.println("----------------");
+		System.out.println(a);
+		System.out.println(e == b);
+		System.out.println(e == c);
+		System.out.println(e == a);
+	}
+
 }

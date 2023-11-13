@@ -2,6 +2,7 @@ package com.c3stones.job.controller;
 
 import java.time.LocalDateTime;
 
+import java.util.Timer;
 import org.quartz.Trigger.TriggerState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -240,6 +241,9 @@ public class JobController {
 	@RequestMapping(value = "save")
 	@ResponseBody
 	public Response<Boolean> save(Job job) {
+
+		Timer t = new Timer();
+
 		User user = UserUtils.get();
 		if (user != null) {
 			job.setCreateUserId(user.getId());
@@ -250,6 +254,7 @@ public class JobController {
 		job.setUpdateDate(now);
 		boolean result = jobService.save(job);
 		return Response.success(result);
+
 	}
 
 }

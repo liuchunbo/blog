@@ -14,9 +14,11 @@
 		<version>2.1.4.RELEASE</version>
 	</parent>
 
-	<profiles>
+	<properties>
 		<java.version>1.8</java.version>
-	</profiles>
+	</properties>
+
+
 
 	<dependencies>
 		<dependency>
